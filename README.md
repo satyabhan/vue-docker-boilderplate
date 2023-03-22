@@ -5,16 +5,18 @@ Boilerplate docker image for vue dev and production
 ```
 docker build --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g) -t vue_helper - < ./dockerfiles/Setup.Dockerfile
 
-docker run --rm -v ~/projects/vue/:/vue-setup -it vue_helper 
+docker run --rm -v ~/projects/vue-docker-boilderplate/:/vue-setup -it vue_helper 
 
 vue create vue_app
+
+exit
 ```
 
 ## Build and run dev
 ```
 docker build -f Dockerfiles/Dev.Dockerfile -t vue_app:dev vue_app
 
-docker run --rm -v ~/projects/vue/vue_app:/vue_app -p 8080:8080 -it vue_app:dev
+docker run --rm -v ~/projects/vue-docker-boilderplate/vue_app:/vue_app -p 8080:8080 -it vue_app:dev
 ```
 
 ## Build and run prod
