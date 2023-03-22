@@ -3,7 +3,7 @@ FROM node:lts AS build-stage
 
 WORKDIR /vue_app
 
-COPY package.json ./
+COPY package*.json ./
 
 RUN yarn install
 
